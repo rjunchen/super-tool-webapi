@@ -4,7 +4,7 @@ using SuperTool.Core.Models;
 namespace SuperTool.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ConfigurationsController : ControllerBase
     {
         private readonly ILogger<ConfigurationsController> _logger;
@@ -14,12 +14,20 @@ namespace SuperTool.WebApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetConfiguration")]
-        public IEnumerable<Configuration> Get()
+        [HttpGet()]
+        public Configuration GetConfiguration()
         {
             var config = new Configuration() { Name = "Test" };
 
-            return [config];
+            return config;
+        }
+
+        [HttpPost()]
+        public Configuration PostConfiguration()
+        {
+            var config = new Configuration() { Name = "Test" };
+
+            return config;
         }
     }
 }
