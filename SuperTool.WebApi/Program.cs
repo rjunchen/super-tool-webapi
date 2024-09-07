@@ -1,3 +1,6 @@
+using SuperTool.Core.Models;
+using SuperTool.Infrastructure.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
+
+builder.Services.Configure<SuperToolDatabaseSettings>(builder.Configuration.GetSection("SuperToolDatabase"));
+builder.Services.AddSingleton<ConfigurationService>();
 
 var app = builder.Build();
 
