@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SuperTool.Core\SuperTool.Core.csproj" />
+    <ProjectReference Include="..\SuperTool.Infrastructure\SuperTool.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
